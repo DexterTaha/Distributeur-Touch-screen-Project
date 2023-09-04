@@ -63,6 +63,20 @@ void loop()
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
+
+      for (int i = 0; i < 3; i++) {
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
+      delay(100);
+      digitalWrite(Led1,HIGH);
+      digitalWrite(Led2,HIGH);
+      digitalWrite(Led3,HIGH);
+      delay(100);
+      }
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
     }
     else if(int(rec[0])==2)
     {
@@ -77,6 +91,20 @@ void loop()
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
+
+      for (int i = 0; i < 3; i++) {
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
+      delay(100);
+      digitalWrite(Led1,HIGH);
+      digitalWrite(Led2,HIGH);
+      digitalWrite(Led3,HIGH);
+      delay(100);
+      }
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
     }
     else if(int(rec[0])==3)
     {
@@ -91,6 +119,20 @@ void loop()
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
+      
+      for (int i = 0; i < 3; i++) {
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
+      delay(100);
+      digitalWrite(Led1,HIGH);
+      digitalWrite(Led2,HIGH);
+      digitalWrite(Led3,HIGH);
+      delay(100);
+      }
+      digitalWrite(Led1,LOW);
+      digitalWrite(Led2,LOW);
+      digitalWrite(Led3,LOW);
     }
   }
 }
