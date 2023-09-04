@@ -1,5 +1,5 @@
-const int Pump1 = 8;
-const int Pump2 = 9;
+const int Pump1 = 9;
+const int Pump2 = 8;
 const int Pump3 = 11;
 const int Led1 = 6;
 const int Led2 = 7;
@@ -43,7 +43,7 @@ void Welcome(){
   
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
-      digitalWrite(Led3,LOW)
+      digitalWrite(Led3,LOW);
 }
 void loop() 
 {
