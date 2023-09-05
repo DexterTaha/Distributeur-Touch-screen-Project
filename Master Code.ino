@@ -1,6 +1,6 @@
-const int Pump1 = 9;
-const int Pump2 = 8;
-const int Pump3 = 11;
+const int Pump2 = 9;
+const int Pump3 = 8;
+const int Pump1 = 11;
 const int Led1 = 6;
 const int Led2 = 7;
 const int Led3 = 10;
