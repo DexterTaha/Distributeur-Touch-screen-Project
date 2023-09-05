@@ -50,14 +50,20 @@ void Welcome(){
 }
 void loop() 
 {
-  if(Royal == 6){digitalWrite(Led1,HIGH);}
-  if(Oasis == 6){digitalWrite(Led2,HIGH);}
-  if(Tropical == 6){digitalWrite(Led3,HIGH);}
+    if (Royal >= 6) {
+    digitalWrite(Led1, HIGH);
+  }
+  if (Oasis >= 6) {
+    digitalWrite(Led2, HIGH);
+  }
+  if (Tropical >= 6) {
+    digitalWrite(Led3, HIGH);
+  }
   if(Serial.available())
   {
     String rec= Serial.readString();
-    if(int(rec[0])==1 && Royal > 7)
-    {
+    if(int(rec[0])==1)
+    {if (Royal < 7) {
       digitalWrite(Pump1,HIGH);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
@@ -84,9 +90,10 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Royal++;
+      }
     }
-    else if(int(rec[0])==2 && Oasis > 7)
-    {
+    else if(int(rec[0])==2)
+    {if (Oasis < 7) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,HIGH);
       digitalWrite(Pump3,LOW);
@@ -113,9 +120,10 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Oasis++;
+      }
     }
-    else if(int(rec[0])==3 && Tropical > 7)
-    {
+    else if(int(rec[0])==3)
+    {if (Tropical < 7) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,HIGH);
@@ -142,6 +150,7 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Tropical++;
+      }
     }
   }
 }
