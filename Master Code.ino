@@ -56,7 +56,7 @@ void loop()
   if(Serial.available())
   {
     String rec= Serial.readString();
-    if(int(rec[0])==1)
+    if(int(rec[0])==1 && Royal > 7)
     {
       digitalWrite(Pump1,HIGH);
       digitalWrite(Pump2,LOW);
@@ -85,7 +85,7 @@ void loop()
       digitalWrite(Led3,LOW);
       Royal++;
     }
-    else if(int(rec[0])==2)
+    else if(int(rec[0])==2 && Oasis > 7)
     {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,HIGH);
@@ -105,7 +105,7 @@ void loop()
       digitalWrite(Led3,LOW);
       delay(100);
       digitalWrite(Led1,HIGH);
-      digitalWrite(Led2,HIGH);
+      digitalWrite(Led2,HIGH); 
       digitalWrite(Led3,HIGH);
       delay(100);
       }
@@ -114,7 +114,7 @@ void loop()
       digitalWrite(Led3,LOW);
       Oasis++;
     }
-    else if(int(rec[0])==3)
+    else if(int(rec[0])==3 && Tropical > 7)
     {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
