@@ -63,7 +63,7 @@ void loop()
   {
     String rec= Serial.readString();
     if(int(rec[0])==1)
-    {if (Royal < 7) {
+    {if (Royal < 6) {
       digitalWrite(Pump1,HIGH);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
@@ -90,10 +90,11 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Royal++;
+      Oasis++;
       }
     }
     else if(int(rec[0])==2)
-    {if (Oasis < 7) {
+    {if (Oasis < 6) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,HIGH);
       digitalWrite(Pump3,LOW);
@@ -120,10 +121,11 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Oasis++;
+      Tropical++;
       }
     }
     else if(int(rec[0])==3)
-    {if (Tropical < 7) {
+    {if (Tropical < 6) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,HIGH);
@@ -150,6 +152,7 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Tropical++;
+      Oasis++;
       }
     }
   }
