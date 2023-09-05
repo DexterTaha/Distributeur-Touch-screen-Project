@@ -1,6 +1,6 @@
-const int Pump2 = 9;
-const int Pump3 = 8;
-const int Pump1 = 11;
+const int Pump1 = 8;
+const int Pump2 = 11;
+const int Pump3 = 9;
 const int Led1 = 6;
 const int Led2 = 7;
 const int Led3 = 10;
@@ -53,25 +53,31 @@ void loop()
     if (Royal >= 6) {
     digitalWrite(Led1, HIGH);
   }
+
   if (Oasis >= 6) {
     digitalWrite(Led2, HIGH);
   }
+
   if (Tropical >= 6) {
     digitalWrite(Led3, HIGH);
   }
+
   if(Serial.available())
   {
     String rec= Serial.readString();
     if(int(rec[0])==1)
-    {if (Royal < 6) {
+    {
+      if (Royal < 6 && Oasis < 6) {
       digitalWrite(Pump1,HIGH);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
       delay(time);
+
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,HIGH);
       digitalWrite(Pump3,LOW);
       delay(time);
+
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
@@ -81,11 +87,13 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       delay(100);
+
       digitalWrite(Led1,HIGH);
       digitalWrite(Led2,HIGH);
       digitalWrite(Led3,HIGH);
       delay(100);
       }
+
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
@@ -94,15 +102,18 @@ void loop()
       }
     }
     else if(int(rec[0])==2)
-    {if (Oasis < 6) {
+    {
+      if (Oasis < 6 && Tropical < 6) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,HIGH);
       digitalWrite(Pump3,LOW);
       delay(time);
+
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,HIGH);
       delay(time);
+
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
@@ -112,28 +123,34 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       delay(100);
+
       digitalWrite(Led1,HIGH);
       digitalWrite(Led2,HIGH); 
       digitalWrite(Led3,HIGH);
       delay(100);
       }
+
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Oasis++;
       Tropical++;
       }
+
     }
     else if(int(rec[0])==3)
-    {if (Tropical < 6) {
+    {
+      if (Tropical < 6 && Royal < 6) {
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,HIGH);
       delay(time);
+
       digitalWrite(Pump1,HIGH);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
       delay(time);
+
       digitalWrite(Pump1,LOW);
       digitalWrite(Pump2,LOW);
       digitalWrite(Pump3,LOW);
@@ -143,16 +160,18 @@ void loop()
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       delay(100);
+
       digitalWrite(Led1,HIGH);
       digitalWrite(Led2,HIGH);
       digitalWrite(Led3,HIGH);
       delay(100);
       }
+
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
       Tropical++;
-      Oasis++;
+      Royal++;
       }
     }
   }
