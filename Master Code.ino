@@ -5,6 +5,9 @@ const int Led1 = 6;
 const int Led2 = 7;
 const int Led3 = 10;
 int time = 2000;
+int Royal = 0;
+int Oasis = 0;
+int Tropical = 0;
 void setup() 
 {
   pinMode(Pump1,OUTPUT);
@@ -47,6 +50,9 @@ void Welcome(){
 }
 void loop() 
 {
+  if(Royal == 6){digitalWrite(Led1,HIGH);}
+  if(Oasis == 6){digitalWrite(Led2,HIGH);}
+  if(Tropical == 6){digitalWrite(Led3,HIGH);}
   if(Serial.available())
   {
     String rec= Serial.readString();
@@ -77,6 +83,7 @@ void loop()
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
+      Royal++;
     }
     else if(int(rec[0])==2)
     {
@@ -105,6 +112,7 @@ void loop()
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
+      Oasis++;
     }
     else if(int(rec[0])==3)
     {
@@ -133,6 +141,7 @@ void loop()
       digitalWrite(Led1,LOW);
       digitalWrite(Led2,LOW);
       digitalWrite(Led3,LOW);
+      Tropical++;
     }
   }
 }
